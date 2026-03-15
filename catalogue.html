@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue — Éditions HAPAX</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .catalogue-header {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 2px solid var(--noir);
+            margin-bottom: 60px;
+        }
+
+        .catalogue-header .logo {
+            font-size: 3em;
+            margin-bottom: 8px;
+        }
+
+        .catalogue-header h1 {
+            font-size: 1.4em;
+            letter-spacing: 0.3em;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 0.85em;
+            color: var(--gris);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+            border-bottom: 1px solid var(--gris);
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .catalogue-intro {
+            text-align: center;
+            font-style: italic;
+            color: var(--gris);
+            margin-bottom: 60px;
+            font-size: 1.05em;
+        }
+
+        .livre {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 50px;
+            margin-bottom: 80px;
+            padding-bottom: 80px;
+            border-bottom: 1px solid #ddd;
+            align-items: start;
+        }
+
+        .livre:last-child {
+            border-bottom: none;
+        }
+
+        .livre-couv {
+            position: relative;
+        }
+
+        .livre-couv img {
+            width: 100%;
+            display: block;
+            box-shadow: 4px 4px 20px rgba(0,0,0,0.18);
+        }
+
+        .livre-numero {
+            position: absolute;
+            top: -14px;
+            left: -14px;
+            width: 36px;
+            height: 36px;
+            background: var(--accent);
+            color: white;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .livre-info {
+            padding-top: 10px;
+        }
+
+        .livre-info .genre {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            margin-bottom: 14px;
+        }
+
+        .livre-info h2 {
+            font-size: 1.9em;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 6px;
+        }
+
+        .livre-info .auteur {
+            font-size: 1em;
+            color: var(--gris);
+            font-style: italic;
+            margin-bottom: 28px;
+        }
+
+        .livre-info .description {
+            font-size: 0.98em;
+            line-height: 1.75;
+            margin-bottom: 28px;
+        }
+
+        .livre-meta {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            font-size: 0.82em;
+            color: var(--gris);
+            letter-spacing: 0.04em;
+        }
+
+        .livre-meta span strong {
+            color: var(--noir);
+            font-weight: 600;
+        }
+
+        .livre-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-amazon {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: var(--noir);
+            color: var(--blanc);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.82em;
+            border: 2px solid var(--noir);
+            transition: all 0.3s ease;
+        }
+
+        .btn-amazon:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: transparent;
+            color: var(--noir);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.82em;
+            border: 2px solid var(--noir);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--noir);
+            color: var(--blanc);
+        }
+
+        /* Section "à paraître" */
+        .a-paraitre {
+            margin-top: 60px;
+            padding: 50px 40px;
+            border: 2px dashed #ccc;
+            text-align: center;
+        }
+
+        .a-paraitre h3 {
+            font-size: 1.1em;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gris);
+            margin-bottom: 15px;
+        }
+
+        .a-paraitre p {
+            font-style: italic;
+            color: var(--gris);
+            font-size: 0.95em;
+        }
+
+        /* Biographie accordéon */
+        .bio {
+            margin-bottom: 28px;
+            border-left: 2px solid #ddd;
+            padding-left: 16px;
+        }
+
+        .bio summary {
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gris);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .bio summary:hover {
+            color: var(--accent);
+        }
+
+        .bio p {
+            margin-top: 12px;
+            font-size: 0.88em;
+            line-height: 1.65;
+            color: var(--gris);
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .livre {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .livre-couv {
+                max-width: 200px;
+            }
+
+            .livre-info h2 {
+                font-size: 1.5em;
+            }
+
+            .livre-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .catalogue-header .logo {
+                font-size: 2.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="catalogue-header">
+        <div class="logo">ἍΠΑΞ</div>
+        <h1>CATALOGUE</h1>
+        <a href="index.html" class="back-link">← Retour à l'accueil</a>
+    </div>
+
+    <main>
+
+        <p class="catalogue-intro">
+            Chaque livre HAPAX n'existe qu'une fois.<br>
+            Ce qui suit est l'intégralité de ce qui a osé paraître.
+        </p>
+
+        <!-- PUBLICATION N°1 -->
+        <div class="livre">
+            <div class="livre-couv">
+                <div class="livre-numero">I</div>
+                <img 
+                    src="https://m.media-amazon.com/images/I/71awO3FevSL._SY466_.jpg" 
+                    alt="Couverture — première publication HAPAX"
+                >
+            </div>
+
+            <div class="livre-info">
+                <p class="genre">Essai &mdash; Réflexions chevalines</p>
+                <h2>Incitatus</h2>
+                <p class="auteur">Jacques Thomas</p>
+
+                <p class="description">
+                    Incitatus : le cheval de l'Empereur Caligula, fait Sénateur, logé dans une écurie de marbre,
+                    nourri d'avoine parsemée de paillettes d'or. Figure de l'excès qui tourne au ridicule,
+                    il devient ici le prétexte à de libres réflexions sur le comportement humain — et sur
+                    ce que nous devons, en vérité, à ces compagnons d'aventures que furent les chevaux
+                    dans la guerre, le transport, l'agriculture et le sport.
+                </p>
+
+                <details class="bio">
+                    <summary>Biographie de l'auteur</summary>
+                    <p>Élève Officier à l'École Nationale des Haras (Haras du Pin), éleveur de Pur Sang durant vingt ans dans le Perche, directeur de l'Hippodrome de Lyon Parilly pendant huit années, co-créateur avec son fils de l'Agence Equicom, première agence française de conseil et de réalisation d'événements équestres.</p>
+                </details>
+
+                <div class="livre-meta">
+                    <span><strong>ISBN</strong> 978-2-487855-00-7</span>
+                    <span><strong>Pages</strong> 66</span>
+                    <span><strong>Prix</strong> 9,00&nbsp;€</span>
+                    <span><strong>Parution</strong> 12 mars 2026</span>
+                </div>
+
+                <div class="livre-actions">
+                    <a href="https://www.amazon.fr/dp/2487855002" 
+                       target="_blank" 
+                       class="btn-amazon">
+                        Commander sur Amazon
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- À paraître -->
+        <div class="a-paraitre">
+            <h3>À paraître</h3>
+            <p>D'autres hapax sont en préparation.<br>
+            Ils paraîtront quand ils seront prêts.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Éditions HAPAX &copy; 2025</p>
+        <p>ISBN : 978-2-487855</p>
+        <p>une marque éditoriale de L'Œuvrier Typographe S. A.</p>
+    </footer>
+
+</body>
+</html>

@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
 
 /* Reset */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -181,88 +183,26 @@ footer a:hover {
         font-size: 1.1em;
         padding: 20px 15px;
     }
-    
+
     .logo {
         font-size: 3.5em;
     }
-    
+
     h1 {
         font-size: 1.6em;
         letter-spacing: 0.2em;
     }
-    
+
     header {
         padding: 60px 0 40px;
     }
-    
+
     .actions {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .action-box {
         padding: 30px 20px;
     }
-}
-
-/* BONNE PRATIQUE : Assure que le padding et la bordure sont inclus dans la taille totale */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Style de la barre de navigation entière (Flexbox) */
-.navbar { 
-  /* ... votre CSS de .navbar ... */ 
-}
-
-/* Style de la liste de liens */
-.nav-links { 
-  /* ... votre CSS de .nav-links ... */ 
-}
-
-/* Style des liens */
-.nav-links a { 
-  /* ... votre CSS des liens ... */ 
-}
-
-/* etc. */
-
-/* 1. Rendre l'élément parent positionnable */
-.dropdown {
-  /* Indispensable pour que le sous-menu se positionne par rapport à son parent */
-  position: relative;
-  /* Assurez-vous qu'il y a de l'espace */
-  margin-left: 20px;
-}
-
-/* 2. Style de la boîte du sous-menu */
-.dropdown-menu {
-  /* On le positionne absolument par rapport à .dropdown */
-  position: absolute;
-  top: 100%; 
-  left: 0; 
-  /* ... reste du CSS du menu déroulant ... */
-}
-
-/* 3. Style des liens du sous-menu */
-.dropdown-menu li {
-  margin: 0; 
-}
-
-.dropdown-menu a {
-  padding: 10px 15px;
-  color: white;
-  display: block;
-}
-
-/* 4. Affichage au survol */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* C'est la section pour les mobiles que nous avons discutée plus tôt */
-@media (max-width: 768px) {
-  /* ... votre CSS responsive ... */
 }
