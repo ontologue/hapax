@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Maître des fous — Pierre-Henri Murcia — Éditions HAPAX</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── En-tête page ── */
+        .annonce-header {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 2px solid var(--noir);
+            margin-bottom: 60px;
+        }
+        .annonce-header .logo {
+            font-size: 3em;
+            margin-bottom: 8px;
+        }
+        .annonce-header .surtitre {
+            font-size: 0.78em;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 18px;
+            font-size: 0.85em;
+            color: var(--gris);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+            border-bottom: 1px solid var(--gris);
+            transition: color 0.3s;
+        }
+        .back-link:hover { color: var(--accent); border-color: var(--accent); }
+
+        /* ── Bloc principal ── */
+        .livre-annonce {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 50px;
+            align-items: start;
+            margin-bottom: 70px;
+        }
+        .livre-annonce img {
+            width: 100%;
+            display: block;
+            box-shadow: 5px 5px 22px rgba(0,0,0,0.20);
+        }
+        .livre-annonce .badge-collection {
+            display: inline-block;
+            font-size: 0.72em;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 3px 10px;
+            margin-bottom: 18px;
+        }
+        .livre-annonce h1 {
+            font-size: 2.4em;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            line-height: 1.15;
+            text-transform: none;
+            margin-bottom: 6px;
+        }
+        .livre-annonce .auteur {
+            font-size: 1.05em;
+            font-style: italic;
+            color: var(--gris);
+            margin-bottom: 30px;
+        }
+        .livre-annonce .date-parution {
+            font-size: 0.8em;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--blanc);
+            background: var(--accent);
+            display: inline-block;
+            padding: 5px 14px;
+            margin-bottom: 30px;
+        }
+
+        /* ── Corps éditorial ── */
+        .corps p {
+            margin-bottom: 22px;
+            font-size: 1em;
+            line-height: 1.8;
+        }
+        .corps .chapeau {
+            font-size: 1.1em;
+            font-style: italic;
+            border-left: 3px solid var(--accent);
+            padding-left: 20px;
+            margin-bottom: 35px;
+            color: var(--noir);
+        }
+
+        /* ── Séparateur typographique ── */
+        .filet {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 50px 0;
+        }
+
+        /* ── Bloc citation presse ── */
+        .citations {
+            margin: 50px 0;
+        }
+        .citations h2 {
+            font-size: 0.78em;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--gris);
+            margin-bottom: 30px;
+        }
+        .citation-item {
+            border-left: 2px solid var(--accent);
+            padding-left: 20px;
+            margin-bottom: 28px;
+        }
+        .citation-item blockquote {
+            font-style: italic;
+            font-size: 1.05em;
+            line-height: 1.7;
+            margin-bottom: 6px;
+        }
+        .citation-item cite {
+            font-size: 0.78em;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gris);
+            font-style: normal;
+        }
+
+        /* ── Bio auteur ── */
+        .bio-auteur {
+            background: #f5f5f5;
+            padding: 35px 40px;
+            margin: 50px 0;
+        }
+        .bio-auteur h2 {
+            font-size: 0.78em;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--gris);
+            margin-bottom: 16px;
+        }
+        .bio-auteur p {
+            font-size: 0.92em;
+            line-height: 1.75;
+        }
+
+        /* ── CTA ── */
+        .cta {
+            text-align: center;
+            padding: 50px 0 20px;
+        }
+        .cta .mention-parution {
+            font-size: 1em;
+            font-style: italic;
+            color: var(--gris);
+            margin-bottom: 20px;
+        }
+        .btn-catalogue {
+            display: inline-block;
+            padding: 14px 36px;
+            background: var(--noir);
+            color: var(--blanc);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.82em;
+            border: 2px solid var(--noir);
+            transition: all 0.3s ease;
+        }
+        .btn-catalogue:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 700px) {
+            .livre-annonce {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .livre-annonce img { max-width: 180px; }
+            .livre-annonce h1 { font-size: 1.8em; }
+            .bio-auteur { padding: 25px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="annonce-header">
+        <div class="logo">ἍΠΑΞ</div>
+        <p class="surtitre">Parution — Avril 2026</p>
+        <a href="index.html" class="back-link">← Retour à l'accueil</a>
+    </div>
+
+    <main>
+
+        <!-- Bloc couverture + titre -->
+        <div class="livre-annonce">
+            <div>
+                <img
+                    src="images/couvertures/murcia-maitre-des-fous.png"
+                    alt="Couverture — Le Maître des fous, Pierre-Henri Murcia"
+                >
+            </div>
+            <div>
+                <span class="badge-collection">Littérature blanche</span>
+                <h1>Le Maître des fous</h1>
+                <p class="auteur">Pierre-Henri Murcia</p>
+                <span class="date-parution">Paraît début avril 2026</span>
+            </div>
+        </div>
+
+        <!-- Corps éditorial -->
+        <div class="corps">
+
+            <p class="chapeau">
+                Fernando Carvalho est un imposteur consentant : cet homme qui se prétend
+                agent des services secrets américains se retrouve un jour convoqué pour
+                l'être vraiment — deux hommes du FSB l'attendent avec une seringue.
+                Ils ne veulent pas vraiment lui. Ils veulent Nina Kazakova.
+            </p>
+
+            <p>
+                Nina est femme mystérieuse aux origines russes, peut-être espionne du FSB,
+                peut-être maîtresse cachée du président Popov — peut-être les deux, peut-être
+                ni l'un ni l'autre. Fasciné par elle depuis qu'il l'a croisée chez les
+                parents de son beau-fils, Fernando se laisse happer dans le dédale d'une
+                Russie légendaire, folklorique, manipulée : celle où le mensonge historique
+                s'accouple au mensonge érotique pour engendrer une nouvelle version de
+                l'Histoire.
+            </p>
+
+            <p>
+                En toile de fond : le mystère de la mort du tsar Alexandre I<sup>er</sup>
+                et le destin énigmatique du moine errant Fiodor Kouzmitch — figure
+                historique dont l'historienne Marina Gromyko a montré qu'elle est
+                bien plus qu'une légende.
+            </p>
+
+            <p>
+                Le récit est construit en tiroirs emboîtés, poupées russes narratives
+                dont on ne découvre le véritable narrateur qu'à la dernière page —
+                à la manière de la Shéhérazade des <em>Mille et une nuits</em>, qui
+                multiplie les histoires pour échapper à la mort promise à l'aube.
+                <em>Le Maître des fous</em> est une comédie de l'imposture universelle,
+                une parodie de la guerre froide qui n'a jamais vraiment cessé,
+                un roman d'amour où chaque mensonge est la condition d'un amour possible.
+            </p>
+
+        </div>
+
+        <hr class="filet">
+
+        <!-- Citations lecteurs -->
+        <div class="citations">
+            <h2>Ce qu'on dit de Pierre-Henri Murcia</h2>
+
+            <div class="citation-item">
+                <blockquote>
+                    «&nbsp;Cette trouvaille d'un éditeur localement transcendant
+                    s'impose à lire d'une traite.&nbsp;»
+                </blockquote>
+                <cite>Martine Chifflot, autrice et réalisatrice —
+                à propos de <em>L'écume de tes yeux</em> (ELT, 2026)</cite>
+            </div>
+
+            <div class="citation-item">
+                <blockquote>
+                    «&nbsp;Pierre-Henri Murcia a écrit, en creux, une réponse à Camus.
+                    J'en suis sortie consolée.&nbsp;»
+                </blockquote>
+                <cite>Babelio — à propos de <em>L'écume de tes yeux</em> (ELT, 2026)</cite>
+            </div>
+
+            <div class="citation-item">
+                <blockquote>
+                    «&nbsp;Un premier roman d'une ambition rare dans le paysage
+                    littéraire actuel.&nbsp;»
+                </blockquote>
+                <cite>Babelio — à propos de
+                <em>Comment rater sa vie de couple à coup sûr</em> (ELT, 2025)</cite>
+            </div>
+        </div>
+
+        <hr class="filet">
+
+        <!-- Bio auteur -->
+        <div class="bio-auteur">
+            <h2>L'auteur</h2>
+            <p>
+                Pierre-Henri Murcia est né en 1965 à Noisy-le-Sec et a grandi du côté
+                de Pézenas. Ouvrier du bâtiment et œuvrier en littérature, il s'emploie
+                depuis des années à faire de la théorie mimétique de René Girard —
+                ce déchiffrement impitoyable du désir et du mensonge — une matière
+                romanesque vivante et accessible. <em>Le Maître des fous</em> est son
+                premier roman, achevé en 2019 et auto-imprimé alors à quelques exemplaires.
+                Il précède ses deux publications aux éditions Localement Transcendantes :
+                <em>Comment rater sa vie de couple à coup sûr</em> (2025) et
+                <em>L'écume de tes yeux</em> (2026). C'est ici sa première
+                édition publique.
+            </p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta">
+            <p class="mention-parution">
+                <em>Le Maître des fous</em> paraît début avril 2026.<br>
+                Disponible sur Amazon KDP.
+            </p>
+            <a href="catalogue.html" class="btn-catalogue">Voir le catalogue</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Éditions HAPAX &copy; 2026</p>
+        <p>ISBN : 978-2-487855</p>
+        <p>une marque éditoriale de L'Œuvrier Typographe S. A.</p>
+    </footer>
+
+</body>
+</html>
