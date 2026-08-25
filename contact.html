@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nous écrire — Éditions HAPAX</title>
+    <meta name="description" content="Écrire aux Éditions HAPAX : proposition de manuscrit, presse et critique, commande et disponibilité.">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#175F6B">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-header {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 2px solid var(--noir);
+            margin-bottom: 55px;
+        }
+
+        .contact-header h1 {
+            font-size: 1.4em;
+            letter-spacing: 0.3em;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 0.85em;
+            color: var(--gris);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+            border-bottom: 1px solid var(--gris);
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .back-link:hover { color: var(--accent); border-color: var(--accent); }
+
+        .contact-intro {
+            text-align: center;
+            font-style: italic;
+            color: var(--gris);
+            font-size: 1.02em;
+            margin-bottom: 50px;
+        }
+
+        .champ { margin-bottom: 26px; }
+
+        .champ label {
+            display: block;
+            font-size: 0.78em;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--gris);
+            margin-bottom: 8px;
+        }
+
+        .champ input,
+        .champ select,
+        .champ textarea {
+            width: 100%;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1em;
+            color: var(--noir);
+            background: white;
+            border: 1px solid var(--filet);
+            border-radius: 0;
+            padding: 12px 14px;
+            transition: border-color 0.25s;
+        }
+
+        .champ input:focus,
+        .champ select:focus,
+        .champ textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .champ textarea {
+            min-height: 220px;
+            line-height: 1.7;
+            resize: vertical;
+        }
+
+        /* Pot de miel : invisible pour l'humain, rempli par les robots. */
+        .rucher {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .envoi { text-align: center; margin-top: 40px; }
+
+        button.btn {
+            cursor: pointer;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .mention-rgpd {
+            margin-top: 55px;
+            padding-top: 25px;
+            border-top: 1px solid var(--filet);
+            font-size: 0.82em;
+            color: var(--gris);
+            line-height: 1.65;
+            text-align: center;
+        }
+
+        .mention-rgpd a {
+            color: var(--gris);
+            border-bottom: 1px solid var(--filet);
+            text-decoration: none;
+        }
+
+        .mention-rgpd a:hover { color: var(--accent); border-color: var(--accent); }
+    </style>
+</head>
+<body>
+
+    <div class="contact-header">
+        <div class="logo"><img src="/images/logo-xi.svg" alt="Éditions HAPAX" width="78" height="94"></div>
+        <h1>NOUS ÉCRIRE</h1>
+        <a href="/index.html" class="back-link">← Retour à l'accueil</a>
+    </div>
+
+    <main>
+
+        <p class="contact-intro">Chaque message est lu. Chaque message reçoit une réponse.</p>
+
+        <form action="https://formsubmit.co/contact@editions-hapax.org" method="POST">
+
+            <input type="hidden" name="_subject" value="[hapax] Message depuis le site">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://editions-hapax.org/merci.html">
+
+            <div class="champ">
+                <label for="objet">Objet</label>
+                <select id="objet" name="Objet">
+                    <option>Proposition de manuscrit</option>
+                    <option>Presse et critique</option>
+                    <option>Commande et disponibilité</option>
+                    <option>Autre</option>
+                </select>
+            </div>
+
+            <div class="champ">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="Nom" autocomplete="name" maxlength="120" required>
+            </div>
+
+            <div class="champ">
+                <label for="email">Adresse électronique</label>
+                <input type="email" id="email" name="email" autocomplete="email" maxlength="200" required>
+            </div>
+
+            <div class="champ">
+                <label for="message">Message</label>
+                <textarea id="message" name="Message" maxlength="8000" required></textarea>
+            </div>
+
+            <div class="rucher" aria-hidden="true">
+                <label for="_honey">Ne remplissez pas ce champ</label>
+                <input type="text" id="_honey" name="_honey" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="envoi">
+                <button type="submit" class="btn">Envoyer</button>
+            </div>
+
+        </form>
+
+        <p class="mention-rgpd">
+            Les données transmises servent uniquement à vous répondre et sont conservées trois ans.
+            Vous disposez d'un droit d'accès, de rectification et d'effacement —
+            <a href="/mentions-legales.html">mentions légales</a>.
+        </p>
+
+    </main>
+
+    <footer>
+        <p>Éditions HAPAX &copy; 2026</p>
+        <p>ISBN&nbsp;: 978-2-487855</p>
+        <p>une marque éditoriale de L'Œuvrier Typographe S.&nbsp;A.</p>
+        <p><a href="/mentions-legales.html">Mentions légales</a></p>
+    </footer>
+
+</body>
+</html>
