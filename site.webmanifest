@@ -1,0 +1,21 @@
+{
+  "name": "\u00c9ditions HAPAX",
+  "short_name": "HAPAX",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#175F6B",
+  "background_color": "#175F6B",
+  "display": "standalone"
+}
