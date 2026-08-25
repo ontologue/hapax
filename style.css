@@ -101,6 +101,21 @@ h1 {
     color: var(--gris);
 }
 
+/* Logotypie grecque — glose du monogramme, contours Lithos Pro Black vectorisés.
+   Le Ξ est la dernière lettre de ἍΠΑΞ : le mot éclaire la marque sans la remplacer. */
+.mot-grec {
+    margin: 14px 0 20px;
+}
+
+.mot-grec img {
+    display: block;
+    width: 165px;
+    max-width: 60%;
+    height: auto;
+    margin: 0 auto;
+    opacity: 0.85;
+}
+
 /* ── Manifeste ─────────────────────────────────────────────── */
 .manifeste {
     margin: 60px 0;
@@ -235,6 +250,10 @@ footer a:hover {
 
     .logo img {
         width: 96px;
+    }
+
+    .mot-grec img {
+        width: 130px;
     }
 
     .catalogue-header .logo img,
