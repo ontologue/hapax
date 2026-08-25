@@ -160,6 +160,23 @@
             line-height: 1.75;
         }
 
+        /* ── Fiche technique ── */
+        .fiche-technique {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 34px;
+            margin: 45px 0 0;
+            padding-top: 28px;
+            border-top: 1px solid var(--filet);
+            font-size: 0.82em;
+            color: var(--gris);
+            letter-spacing: 0.04em;
+        }
+        .fiche-technique strong {
+            color: var(--noir);
+            font-weight: 600;
+        }
+
         /* ── CTA ── */
         .cta {
             text-align: center;
@@ -205,8 +222,12 @@
 
     <div class="annonce-header">
         <div class="logo"><img src="/images/logo-xi.svg" alt="Éditions HAPAX" width="78" height="94"></div>
-        <p class="surtitre">Parution — Avril 2026</p>
-        <a href="index.html" class="back-link">← Retour à l'accueil</a>
+        <p class="surtitre">Parution — 28 mars 2026</p>
+        <nav class="nav-principal">
+            <a href="/index.html">Accueil</a>
+            <a href="/catalogue.html">Catalogue</a>
+            <a href="/contact.html">Nous écrire</a>
+        </nav>
     </div>
 
     <main>
@@ -222,7 +243,7 @@
             <div>
                 <h1>Le Maître des fous</h1>
                 <p class="auteur">Pierre-Henri Murcia</p>
-                <span class="date-parution">Paraît début avril 2026</span>
+                <span class="date-parution">Paru le 28 mars 2026</span>
             </div>
         </div>
 
@@ -233,14 +254,14 @@
                 Fernando Carvalho est un imposteur consentant : cet homme qui se prétend
                 agent des services secrets américains se retrouve un jour convoqué pour
                 l'être vraiment — deux hommes du FSB l'attendent avec une seringue.
-                Ils ne veulent pas vraiment lui. Ils veulent Nina Kazakova.
+                Ce qu'ils visent à travers lui, c'est Nina Kazakova.
             </p>
 
             <p>
                 Nina est femme mystérieuse aux origines russes, peut-être espionne du FSB,
                 peut-être maîtresse cachée du président Popov — peut-être les deux, peut-être
-                ni l'un ni l'autre. Fasciné par elle depuis qu'il l'a croisée chez les
-                parents de son beau-fils, Fernando se laisse happer dans le dédale d'une
+                ni l'un ni l'autre. Fasciné par elle depuis qu'il l'a croisée à Paris,
+                Fernando se laisse happer dans le dédale d'une
                 Russie légendaire, folklorique, manipulée : celle où le mensonge historique
                 s'accouple au mensonge érotique pour engendrer une nouvelle version de
                 l'Histoire.
@@ -319,10 +340,15 @@
 
         <!-- CTA -->
         <div class="cta">
-            <p class="mention-parution">
-                <em>Le Maître des fous</em> paraît début avril 2026.
-            </p>
-            <a href="catalogue.html" class="btn-catalogue">Voir le catalogue</a>
+            <a href="/catalogue.html" class="btn-catalogue">Voir le catalogue</a>
+
+            <div class="fiche-technique">
+                <span><strong>ISBN</strong> 978-2-487855-01-4</span>
+                <span><strong>Pages</strong> 290</span>
+                <span><strong>Format</strong> 12,7&nbsp;×&nbsp;20,3&nbsp;cm</span>
+                <span><strong>Prix</strong> 19,00&nbsp;€</span>
+                <span><strong>Parution</strong> 28&nbsp;mars 2026</span>
+            </div>
         </div>
 
     </main>
