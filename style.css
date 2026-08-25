@@ -1,4 +1,8 @@
-/* Import de la police Cormorant Garamond (Google Fonts) */
+/* ============================================================
+   ÉDITIONS HAPAX — feuille de style principale
+   Palette alignée sur le logo (Ξ blanc sur teal)
+   ============================================================ */
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
 
 /* Reset */
@@ -10,15 +14,18 @@
     box-sizing: border-box;
 }
 
-/* Variables */
+/* ── Variables ─────────────────────────────────────────────── */
 :root {
     --noir: #1a1a1a;
     --blanc: #fafafa;
-    --accent: #8b0000; /* Rouge bordeaux */
+    --accent: #175f6b;        /* teal du bloc de marque */
+    --accent-fonce: #0f454e;  /* survols et états actifs */
     --gris: #666;
+    --filet: #ddd;            /* filets et séparateurs */
+    --fond-doux: #f2f5f5;     /* aplats secondaires */
 }
 
-/* Général */
+/* ── Général ───────────────────────────────────────────────── */
 body {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.2em;
@@ -30,7 +37,19 @@ body {
     color: var(--noir);
 }
 
-/* Header */
+::selection {
+    background: var(--accent);
+    color: var(--blanc);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* ── Header ────────────────────────────────────────────────── */
 header {
     text-align: center;
     padding: 80px 0 60px;
@@ -44,6 +63,15 @@ header {
     letter-spacing: 0.15em;
     color: var(--accent);
     margin-bottom: 10px;
+}
+
+/* Logo image — prêt pour le remplacement du glyphe typographique */
+.site-logo {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    margin: 0 auto 24px;
 }
 
 h1 {
@@ -60,7 +88,7 @@ h1 {
     color: var(--gris);
 }
 
-/* Manifeste */
+/* ── Manifeste ─────────────────────────────────────────────── */
 .manifeste {
     margin: 60px 0;
     padding: 0 20px;
@@ -74,7 +102,7 @@ h1 {
     font-size: 1.15em;
     margin-bottom: 40px;
     padding-bottom: 30px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--filet);
 }
 
 .manifeste em {
@@ -84,7 +112,7 @@ h1 {
 .signature {
     margin-top: 50px;
     padding-top: 30px;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--filet);
     font-size: 0.95em;
     line-height: 1.6;
 }
@@ -93,7 +121,7 @@ h1 {
     font-weight: 600;
 }
 
-/* Actions */
+/* ── Actions ───────────────────────────────────────────────── */
 .actions {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -106,17 +134,19 @@ h1 {
     padding: 40px 30px;
     border: 2px solid var(--noir);
     background: white;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .action-box:hover {
-    background: var(--noir);
+    background: var(--accent);
+    border-color: var(--accent);
     color: var(--blanc);
 }
 
 .action-box:hover .btn {
     background: var(--blanc);
-    color: var(--noir);
+    color: var(--accent);
+    border-color: var(--blanc);
 }
 
 .action-box h2 {
@@ -132,6 +162,7 @@ h1 {
     font-size: 0.95em;
 }
 
+/* ── Boutons ───────────────────────────────────────────────── */
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -142,20 +173,21 @@ h1 {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     font-size: 0.85em;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     border: 2px solid var(--noir);
 }
 
 .btn:hover {
     background: var(--accent);
     border-color: var(--accent);
+    color: var(--blanc);
 }
 
-/* Footer */
+/* ── Footer ────────────────────────────────────────────────── */
 footer {
     text-align: center;
     padding: 60px 0 20px;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--filet);
     margin-top: 80px;
     font-size: 0.9em;
     color: var(--gris);
@@ -169,7 +201,7 @@ footer a {
     color: var(--noir);
     text-decoration: none;
     border-bottom: 1px solid var(--noir);
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 footer a:hover {
@@ -177,7 +209,7 @@ footer a:hover {
     border-bottom-color: var(--accent);
 }
 
-/* Responsive */
+/* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 700px) {
     body {
         font-size: 1.1em;
@@ -186,6 +218,10 @@ footer a:hover {
 
     .logo {
         font-size: 3.5em;
+    }
+
+    .site-logo {
+        max-width: 240px;
     }
 
     h1 {
@@ -204,5 +240,15 @@ footer a:hover {
 
     .action-box {
         padding: 30px 20px;
+    }
+}
+
+/* ── Accessibilité ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
     }
 }
