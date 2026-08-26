@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /merci.html
+Disallow: /signature-hapax.html
+
+Sitemap: https://editions-hapax.org/sitemap.xml
