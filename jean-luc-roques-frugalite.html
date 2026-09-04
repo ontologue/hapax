@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essai sur la frugalité — Jean-Luc Roques — Éditions HAPAX</title>
+    <meta name="description" content="Essai sur la frugalité de Jean-Luc Roques : la frugalité n'est ni un régime alimentaire ni une vie étriquée, mais une arme critique braquée contre la démesure. Essai publié aux Éditions HAPAX.">
+    <link rel="canonical" href="https://editions-hapax.org/jean-luc-roques-frugalite">
+
+    <meta property="og:type" content="book">
+    <meta property="og:site_name" content="Éditions HAPAX">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:url" content="https://editions-hapax.org/jean-luc-roques-frugalite">
+    <meta property="og:title" content="Essai sur la frugalité — Jean-Luc Roques">
+    <meta property="og:description" content="Ni régime alimentaire ni vie étriquée : une attitude critique, une arme de dénonciation braquée contre la démesure.">
+    <meta property="og:image" content="https://editions-hapax.org/images/couvertures/jean-luc-roques-frugalite.jpg">
+    <meta property="og:image:alt" content="Couverture — Essai sur la frugalité, Jean-Luc Roques">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#175F6B">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .annonce-header {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 2px solid var(--noir);
+            margin-bottom: 55px;
+        }
+
+        .surtitre {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--accent);
+            margin-top: 14px;
+        }
+
+        /* ── Titraille ── */
+        .titraille {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .titraille .genre {
+            font-size: 0.72em;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .titraille h1 {
+            font-size: 2.1em;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: 0;
+            text-transform: none;
+            margin-bottom: 10px;
+        }
+
+        .titraille .auteur {
+            font-style: italic;
+            color: var(--gris);
+            font-size: 1.1em;
+        }
+
+        /* ── Couverture ── */
+        .couverture {
+            max-width: 260px;
+            margin: 0 auto 50px;
+        }
+
+        .couverture img {
+            width: 100%;
+            display: block;
+            box-shadow: 4px 4px 22px rgba(0,0,0,0.18);
+        }
+
+        /* ── Corps ── */
+        .chapeau {
+            font-size: 1.12em;
+            line-height: 1.75;
+            margin-bottom: 32px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--filet);
+        }
+
+        .corps p {
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        .corps em { font-style: italic; }
+
+        /* ── Presse ── */
+        .presse {
+            margin: 60px 0 0;
+            padding: 34px 34px 30px;
+            background: var(--fond-doux);
+            border-left: 3px solid var(--accent);
+        }
+
+        .presse .mention {
+            font-size: 0.72em;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .presse blockquote {
+            font-size: 1.25em;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .presse .source {
+            font-size: 0.88em;
+            color: var(--gris);
+            line-height: 1.6;
+        }
+
+        .presse .source a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--filet);
+            transition: border-color 0.3s;
+        }
+
+        .presse .source a:hover { border-bottom-color: var(--accent); }
+
+        /* ── Biographie ── */
+        .biographie {
+            margin-top: 55px;
+            padding-top: 30px;
+            border-top: 1px solid var(--filet);
+        }
+
+        .biographie h2 {
+            font-size: 0.78em;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: var(--accent);
+            margin-bottom: 18px;
+        }
+
+        .biographie p {
+            font-size: 0.94em;
+            line-height: 1.75;
+            color: var(--gris);
+        }
+
+        /* ── Fiche technique ── */
+        .fiche-technique {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 34px;
+            margin: 45px 0 0;
+            padding-top: 28px;
+            border-top: 1px solid var(--filet);
+            font-size: 0.82em;
+            color: var(--gris);
+            letter-spacing: 0.04em;
+        }
+
+        .fiche-technique strong { color: var(--noir); font-weight: 600; }
+
+        /* ── CTA ── */
+        .cta {
+            text-align: center;
+            padding: 50px 0 20px;
+        }
+
+        .cta .boutons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 28px;
+            background: transparent;
+            color: var(--noir);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.82em;
+            border: 2px solid var(--noir);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover { background: var(--noir); color: var(--blanc); }
+
+        @media (max-width: 700px) {
+            .titraille h1 { font-size: 1.6em; }
+            .couverture { max-width: 200px; }
+            .presse { padding: 24px 22px; }
+            .presse blockquote { font-size: 1.1em; }
+            .fiche-technique { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="annonce-header">
+        <div class="logo"><img src="/images/logo-xi.svg" alt="Éditions HAPAX" width="78" height="94"></div>
+        <p class="surtitre">Parution — 4 septembre 2026</p>
+        <nav class="nav-principal">
+            <a href="/">Accueil</a>
+            <a href="/catalogue">Catalogue</a>
+            <a href="/contact">Nous écrire</a>
+        </nav>
+    </div>
+
+    <main>
+
+        <div class="titraille">
+            <p class="genre">Essai &mdash; Sociologie</p>
+            <h1>Essai sur la frugalité</h1>
+            <p class="auteur">Jean-Luc Roques</p>
+        </div>
+
+        <div class="couverture">
+            <img src="/images/couvertures/jean-luc-roques-frugalite.jpg"
+                 alt="Couverture — Essai sur la frugalité, Jean-Luc Roques">
+        </div>
+
+        <p class="chapeau">
+            La frugalité inquiète. On l&rsquo;assimile au manque, à la privation, au
+            renoncement — comme si vivre avec moins revenait à vivre diminué.
+        </p>
+
+        <div class="corps">
+            <p>
+                La confusion n&rsquo;a rien d&rsquo;un accident sémantique. Elle sert ceux
+                pour qui l&rsquo;excès, sous toutes ses formes — argent accumulé, pouvoir
+                concentré, passions déchaînées, besoins fabriqués —, demeure le seul horizon
+                pensable.
+            </p>
+
+            <p>
+                Jean-Luc Roques renverse la perspective. La frugalité n&rsquo;est ni un
+                régime alimentaire ni une vie étriquée&nbsp;: c&rsquo;est une attitude
+                critique, une arme de dénonciation braquée contre la démesure. Elle ne
+                mesure pas ce dont on se prive&nbsp;; elle mesure ce qu&rsquo;une société
+                tient pour nécessaire.
+            </p>
+
+            <p>
+                À rebours d&rsquo;une modernité qui a fait du gaspillage un devoir civique,
+                l&rsquo;essai suit à la trace les figures que chaque époque a produites —
+                et aussitôt marginalisées, suspectées, réduites au silence par ceux que la
+                sobriété dérange. L&rsquo;histoire de la frugalité est d&rsquo;abord
+                l&rsquo;histoire de son discrédit.
+            </p>
+
+            <p>
+                Trois avenirs se dessinent au terme du parcours. Deux mènent tout droit à la
+                catastrophe. Le troisième, seul, ouvre une brèche&nbsp;: celui où la
+                frugalité cesse d&rsquo;être un objet de honte pour devenir un principe de
+                libération.
+            </p>
+
+            <p>
+                Un livre qui ne prêche pas la résignation. Il propose une arme de lutte
+                contre une époque qui vante l&rsquo;hystérie consommatrice.
+            </p>
+        </div>
+
+        <div class="biographie">
+            <h2>L&rsquo;auteur</h2>
+            <p>
+                Jean-Luc Roques est docteur en sociologie, ancien maître de conférences à
+                l&rsquo;université de Perpignan et chercheur à l&rsquo;université de
+                Franche-Comté. Ses recherches ont d&rsquo;abord porté sur un objet peu
+                étudié&nbsp;: les petites villes. Il a publié plusieurs ouvrages et articles
+                dans des revues nationales et internationales, qui s&rsquo;attachaient à
+                montrer en quoi ces entités urbaines et leurs habitants se trouvaient dans
+                une situation très incertaine face à un monde contemporain de plus en plus
+                envahissant. Il a ensuite recentré ses travaux sur les paradoxes de la
+                Modernité, et plus nettement sur les errances de la société de consommation
+                et ses effets nocifs, tant sociaux qu&rsquo;environnementaux. Il collabore
+                actuellement avec l&rsquo;association PEAL.
+            </p>
+        </div>
+
+        <div class="cta">
+            <div class="boutons">
+                <a href="https://buy.stripe.com/3cI9AMe1M7g4gUkcWIaAw0l"
+                   target="_blank" rel="noopener" class="btn">Commander — paiement sécurisé</a>
+                <a href="/catalogue" class="btn-outline">Voir le catalogue</a>
+            </div>
+
+            <div class="fiche-technique">
+                <span><strong>ISBN</strong> 978-2-487855-04-5</span>
+                <span><strong>Pages</strong> 132</span>
+                <span><strong>Prix</strong> 14,00&nbsp;&euro;</span>
+                <span><strong>Parution</strong> 4&nbsp;septembre 2026</span>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Éditions HAPAX &copy; 2026</p>
+        <p>ISBN&nbsp;: 978-2-487855</p>
+        <p>une marque éditoriale de L'Œuvrier Typographe S.&nbsp;A.</p>
+        <p><a href="/mentions-legales">Mentions légales</a></p>
+    </footer>
+
+</body>
+</html>
