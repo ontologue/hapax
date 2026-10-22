@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donner la parole — Frédéric Pellerin — Éditions HAPAX</title>
+    <meta name="description" content="Donner la parole de Frédéric Pellerin : vingt ans d'ateliers d'écriture et de conversations publiques, des musées aux EHPAD, racontés de l'intérieur. Plaidoyer pour une parole partagée et outil pour ceux qui animent, enseignent ou accompagnent. Essai publié aux Éditions HAPAX.">
+    <link rel="canonical" href="https://editions-hapax.org/frederic-pellerin-donner-la-parole">
+
+    <meta property="og:type" content="book">
+    <meta property="og:site_name" content="Éditions HAPAX">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:url" content="https://editions-hapax.org/frederic-pellerin-donner-la-parole">
+    <meta property="og:title" content="Donner la parole — Frédéric Pellerin">
+    <meta property="og:description" content="Permettre à chacun, quels que soient son âge, son milieu ou son assurance, de prendre la parole et d'être écouté.">
+    <meta property="og:image" content="https://editions-hapax.org/images/couvertures/pellerin-donner-la-parole.jpg">
+    <meta property="og:image:alt" content="Couverture — Donner la parole, Frédéric Pellerin">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#175F6B">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .annonce-header {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 2px solid var(--noir);
+            margin-bottom: 55px;
+        }
+
+        .surtitre {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--accent);
+            margin-top: 14px;
+        }
+
+        /* ── Titraille ── */
+        .titraille {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .titraille .genre {
+            font-size: 0.72em;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .titraille h1 {
+            font-size: 2.1em;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: 0;
+            text-transform: none;
+            margin-bottom: 10px;
+        }
+
+        .titraille .auteur {
+            font-style: italic;
+            color: var(--gris);
+            font-size: 1.1em;
+        }
+
+        /* ── Couverture ── */
+        .couverture {
+            max-width: 260px;
+            margin: 0 auto 50px;
+        }
+
+        .couverture img {
+            width: 100%;
+            display: block;
+            box-shadow: 4px 4px 22px rgba(0,0,0,0.18);
+        }
+
+        /* ── Corps ── */
+        .chapeau {
+            font-size: 1.12em;
+            line-height: 1.75;
+            margin-bottom: 32px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--filet);
+        }
+
+        .corps p {
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        .corps em { font-style: italic; }
+
+        /* ── Biographie ── */
+        .biographie {
+            margin-top: 55px;
+            padding-top: 30px;
+            border-top: 1px solid var(--filet);
+        }
+
+        .biographie h2 {
+            font-size: 0.78em;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: var(--accent);
+            margin-bottom: 18px;
+        }
+
+        .biographie p {
+            font-size: 0.94em;
+            line-height: 1.75;
+            color: var(--gris);
+        }
+
+        /* ── Fiche technique ── */
+        .fiche-technique {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 34px;
+            margin: 45px 0 0;
+            padding-top: 28px;
+            border-top: 1px solid var(--filet);
+            font-size: 0.82em;
+            color: var(--gris);
+            letter-spacing: 0.04em;
+        }
+
+        .fiche-technique strong { color: var(--noir); font-weight: 600; }
+
+        /* ── CTA ── */
+        .cta {
+            text-align: center;
+            padding: 50px 0 20px;
+        }
+
+        .cta .boutons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 28px;
+            background: transparent;
+            color: var(--noir);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.82em;
+            border: 2px solid var(--noir);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover { background: var(--noir); color: var(--blanc); }
+
+        @media (max-width: 700px) {
+            .titraille h1 { font-size: 1.6em; }
+            .couverture { max-width: 200px; }
+            .fiche-technique { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="annonce-header">
+        <div class="logo"><img src="/images/logo-xi.svg" alt="Éditions HAPAX" width="78" height="94"></div>
+        <p class="surtitre">Parution — 21 octobre 2026</p>
+        <nav class="nav-principal">
+            <a href="/">Accueil</a>
+            <a href="/catalogue">Catalogue</a>
+            <a href="/contact">Nous écrire</a>
+        </nav>
+    </div>
+
+    <main>
+
+        <div class="titraille">
+            <p class="genre">Essai &mdash; Éducation</p>
+            <h1>Donner la parole</h1>
+            <p class="auteur">Frédéric Pellerin</p>
+        </div>
+
+        <div class="couverture">
+            <img src="/images/couvertures/pellerin-donner-la-parole.jpg"
+                 alt="Couverture — Donner la parole, Frédéric Pellerin">
+        </div>
+
+        <p class="chapeau">
+            &laquo;&nbsp;J&rsquo;ai 25 ans, c&rsquo;est la première fois qu&rsquo;on me demande
+            mon avis.&nbsp;&raquo; La phrase a été prononcée à la fin d&rsquo;une conversation
+            publique. Elle résume ce que poursuit Frédéric Pellerin depuis plus de vingt
+            ans&nbsp;: permettre à chacun, quels que soient son âge, son milieu ou son
+            assurance, de prendre la parole et d&rsquo;être écouté.
+        </p>
+
+        <div class="corps">
+            <p>
+                Des musées aux EHPAD, des médiathèques aux services de la Protection
+                judiciaire de la jeunesse, l&rsquo;auteur anime des ateliers d&rsquo;écriture
+                et régule des conversations où l&rsquo;on pense ensemble au lieu de
+                s&rsquo;affronter. Il raconte ici ce travail de l&rsquo;intérieur. Un groupe
+                de jeunes hommes parle d&rsquo;homophobie, des enfants débattent de ce que
+                seraient les garçons et les filles, des adolescents écrivent. Il y a aussi
+                les silences, les pannes, les séances où rien ne prend, qu&rsquo;il relate
+                avec une rare franchise.
+            </p>
+
+            <p>
+                Plaidoyer pour une parole partagée, dans une époque saturée de débats où
+                l&rsquo;on ne s&rsquo;écoute plus, <em>Donner la parole</em> est aussi un
+                outil. Entretiens, questions et thèmes de conversation s&rsquo;adressent à
+                ceux qui animent, enseignent ou accompagnent, et à tous ceux qui veulent
+                apprendre à converser autrement.
+            </p>
+        </div>
+
+        <div class="biographie">
+            <h2>L&rsquo;auteur</h2>
+            <p>
+                Frédéric Pellerin anime des ateliers d&rsquo;écriture et régule des
+                conversations publiques pour enfants, adolescents, adultes et familles dans
+                des musées, médiathèques, librairies, bars culturels, maisons de quartier,
+                entreprises, EHPAD, associations, mais aussi pour la Protection judiciaire
+                de la jeunesse et dans un centre de réinsertion. Il forme également des
+                animateurs à ces deux pratiques. Coordonnateur des réseaux
+                d&rsquo;éducation prioritaire d&rsquo;Angers de 2009 à 2025, il avait
+                auparavant cofondé avec Alain Delaye le Café-sagesse de la ville,
+                qu&rsquo;il a animé de 2004 à 2009. Depuis 1993, il publie textes et
+                critiques dans des revues de littérature et de pédagogie ainsi que sur le
+                site de Philippe Meirieu&nbsp;; il a dirigé la revue de poésie
+                <em>N4728</em> en 2002 et 2003. Musicien, il a joué dans le trio Memento
+                Mori, puis depuis 2023 dans le groupe de chanson à texte Carte Blanche.
+            </p>
+        </div>
+
+        <div class="cta">
+            <div class="boutons">
+                <a href="https://buy.stripe.com/8x27sE3n8gQEdI84qcaAw0q"
+                   target="_blank" rel="noopener" class="btn">Commander — paiement sécurisé</a>
+                <a href="https://www.amazon.fr/dp/2487855053"
+                   target="_blank" rel="noopener" class="btn-outline">Amazon</a>
+                <a href="/catalogue" class="btn-outline">Voir le catalogue</a>
+            </div>
+
+            <div class="fiche-technique">
+                <span><strong>ISBN</strong> 978-2-487855-05-2</span>
+                <span><strong>Pages</strong> 139</span>
+                <span><strong>Prix</strong> 15,00&nbsp;&euro;</span>
+                <span><strong>Parution</strong> 21&nbsp;octobre 2026</span>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Éditions HAPAX &copy; 2026</p>
+        <p>ISBN&nbsp;: 978-2-487855</p>
+        <p>une marque éditoriale de L'Œuvrier Typographe S.&nbsp;A.</p>
+        <p><a href="/mentions-legales">Mentions légales</a></p>
+    </footer>
+
+</body>
+</html>
